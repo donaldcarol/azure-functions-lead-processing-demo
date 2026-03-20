@@ -41,6 +41,13 @@ The HTTP-triggered function receives lead data and places it in an Azure Storage
 A queue-triggered function processes the message asynchronously, while a timer-triggered function
 runs periodic background tasks.
 
+### Workflow
+
+1. A client sends lead data to the HTTP endpoint.
+2. The `submitLead` function validates the request and writes the payload to an Azure Storage Queue.
+3. The `processLead` queue-triggered function processes the message asynchronously.
+4. The `dailySummary` timer-triggered function runs periodic background tasks.
+
 # Functions
 ## submitLead
 
