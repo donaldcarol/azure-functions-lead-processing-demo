@@ -28,6 +28,7 @@ HTTP --> Queue
 Queue --> Processor
 Timer --> Processor
 ```
+This architecture demonstrates an asynchronous serverless workflow using Azure Functions and Azure Storage Queue.
 
 # Functions
 ## submitLead
