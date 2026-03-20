@@ -10,28 +10,6 @@ This project demonstrates a simple serverless business workflow built with Azure
 
 ## Flow
 
-Browser
-
-   │
-   ▼
-
-HTTP Function
- submitLead
- 
-   │   
-   ▼
-
-Azure Storage Queue
-
-   │
-   ▼
-
-Queue Function
- processLead
- 
-   │
-   ▼
-
 Business logic
 
 1. A client sends lead data to the HTTP endpoint
