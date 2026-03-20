@@ -18,24 +18,22 @@ This project demonstrates a simple business-style workflow using three Azure Fun
 ```mermaid
 flowchart LR
 
-subgraph Client
-A[Web Client / Browser]
+User["Client / Browser"]
+
+subgraph Azure["Azure Cloud"]
+    subgraph Functions["Azure Function App"]
+        HTTP["HTTP Trigger\nsubmitLead"]
+        Worker["Queue Trigger\nprocessLead"]
+        Timer["Timer Trigger\ndailySummary"]
+    end
+
+    Storage[(Azure Storage Queue\nleadsqueue)]
 end
 
-subgraph Azure_Function_App["Azure Function App"]
-B[HTTP Trigger\nsubmitLead]
-D[Queue Trigger\nprocessLead]
-E[Timer Trigger\ndailySummary]
-end
-
-subgraph Azure_Storage
-C[(Azure Storage Queue\nleadsqueue)]
-end
-
-A --> B
-B --> C
-C --> D
-E --> D
+User --> HTTP
+HTTP --> Storage
+Storage --> Worker
+Timer --> Worker
 ```
 
 This architecture demonstrates an asynchronous serverless workflow using Azure Functions and Azure Storage Queue.
