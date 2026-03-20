@@ -13,11 +13,20 @@ This project demonstrates a simple business-style workflow using three Azure Fun
 - **dailySummary** – Timer trigger that runs periodically for scheduled background tasks
 
 ## Architecture
+
 ```mermaid
 flowchart TD
-A[Browser] --> B[HTTP Function submitLead]
-B --> C[Azure Queue]
-C --> D[Queue Function processLead]
+
+Client["Client / Browser"]
+HTTP["HTTP Function\nsubmitLead"]
+Queue["Azure Storage Queue\nleadsqueue"]
+Processor["Queue Function\nprocessLead"]
+Timer["Timer Function\ndailySummary"]
+
+Client --> HTTP
+HTTP --> Queue
+Queue --> Processor
+Timer --> Processor
 ```
 
 # Functions
