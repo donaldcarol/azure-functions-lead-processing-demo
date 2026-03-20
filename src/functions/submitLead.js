@@ -33,7 +33,7 @@ app.http('submitLead', {
             if (!name || !email || !message) {
                 return {
                     status: 400,
-                    body: 'Missing required query/body fields: name, email, message'
+                    body: 'Missing required fields: name, email, message'
                 };
             }
 
