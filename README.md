@@ -13,6 +13,7 @@ This project demonstrates a simple business-style workflow using three Azure Fun
 - **dailySummary** – Timer trigger that runs periodically for scheduled background tasks
 
 ## Architecture
+### Serverless Lead Processing Workflow
 
 ```mermaid
 flowchart LR
@@ -38,6 +39,9 @@ E --> D
 ```
 
 This architecture demonstrates an asynchronous serverless workflow using Azure Functions and Azure Storage Queue.
+The HTTP-triggered function receives lead data and places it in an Azure Storage Queue.
+A queue-triggered function processes the message asynchronously, while a timer-triggered function
+runs periodic background tasks.
 
 # Functions
 ## submitLead
