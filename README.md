@@ -11,24 +11,11 @@ This project demonstrates a simple business-style workflow using three Azure Fun
 - **dailySummary** – Timer trigger that runs periodically for scheduled background tasks
 
 ## Architecture
-
-```text
-Client / Browser
-      │
-      ▼
-HTTP Function: submitLead
-      │
-      ▼
-Azure Storage Queue: leadsqueue
-      │
-      ▼
-Queue Function: processLead
-      │
-      ▼
-Business processing / CRM-style workflow
-
-Timer Function: dailySummary
-      └── runs on schedule for recurring background tasks
+```mermaid
+flowchart TD
+A[Browser] --> B[HTTP Function submitLead]
+B --> C[Azure Queue]
+C --> D[Queue Function processLead]
 ```
 
 # Functions
