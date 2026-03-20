@@ -11,21 +11,29 @@ This project demonstrates a simple serverless business workflow built with Azure
 ## Flow
 
 Browser
+
    │
+   
    ▼
 
 HTTP Function
  submitLead
+ 
    │
+   
    ▼
 
 Azure Storage Queue
+
    │
+   
    ▼
 
 Queue Function
  processLead
+ 
    │
+   
    ▼
 
 Business logic
