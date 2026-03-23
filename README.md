@@ -4,12 +4,9 @@
 
 # Azure Functions Lead Processing 
 
-A small serverless Azure Functions project built with the Node.js v4 programming model.
-
-Serverless Azure Functions demo
+This project demonstrates a serverless workflow in Azure using Azure Functions and Storage Queue.
 
 HTTP → Queue → Worker pattern
-
 
 ## Overview
 
@@ -59,9 +56,9 @@ runs periodic background tasks.
 ## submitLead  
 Receives lead data through HTTP query parameters or JSON body.
 Expected fields:  
-name  
-email   
-message   
+- name  
+- email   
+- message   
 It validates the request and pushes the payload into Azure Queue Storage.
 
 ## processLead  
@@ -69,19 +66,28 @@ Triggered automatically when a new message arrives in the queue.
 
 It parses the queued JSON payload and simulates business processing such as:
 
-CRM import  
-sales notification  
-support workflow  
-analytics logging
+- CRM import  
+- sales notification  
+- support workflow  
+- analytics logging
 
 ## dailySummary  
 Runs on a timer and simulates scheduled background work such as:
-reporting 
-housekeeping  
-periodic checks
+- reporting
+- housekeeping  
+- periodic checks
 
+## Features
+- HTTP Trigger
+- Queue Trigger
+- Timer Trigger
+- Asynchronous processing
+- Serverless architecture
+  
 ## Example request  
-https://functionapp.azurewebsites.net/api/submitLead?name=John&email=john@test.com&message=Interested
+```http
+GET /api/submitLead?name=John&email=john@test.com&message=Interested
+```
 
 # Tehnologies  
 - Azure Functions  
@@ -92,8 +98,10 @@ https://functionapp.azurewebsites.net/api/submitLead?name=John&email=john@test.c
 
 # Local development  
 Install dependencies:  
-npm install  
+```bash
+npm install
 func start
+```
 
 # Deploy
 
