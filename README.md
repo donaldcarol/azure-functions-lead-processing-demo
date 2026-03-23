@@ -54,8 +54,7 @@ runs periodic background tasks.
 4. The `dailySummary` timer-triggered function runs periodic background tasks.
 
 # Functions
-## submitLead
-
+## submitLead  
 Receives lead data through HTTP query parameters or JSON body.
 Expected fields:  
 name  
@@ -63,8 +62,7 @@ email
 message   
 It validates the request and pushes the payload into Azure Queue Storage.
 
-## processLead
-
+## processLead  
 Triggered automatically when a new message arrives in the queue.
 
 It parses the queued JSON payload and simulates business processing such as:
@@ -74,18 +72,14 @@ sales notification
 support workflow  
 analytics logging
 
-## dailySummary
-
+## dailySummary  
 Runs on a timer and simulates scheduled background work such as:
 reporting 
 housekeeping  
 periodic checks
 
-## Example request
-/api/submitLead?name=Donald&email=donald@example.com&message=Interested%20in%20Azure
-
-## Example response  
-Lead queued for Donald
+## Example request  
+https://functionapp.azurewebsites.net/api/submitLead?name=John&email=john@test.com&message=Interested
 
 # Tehnologies  
 - Azure Functions  
