@@ -107,6 +107,10 @@ func start
 
 func azure functionapp publish <functionapp-name>
 
+## CI/CD
+
+This project uses GitHub Actions with Azure Login (OIDC) to deploy automatically to an Azure Functions Flex Consumption app on every push to `main`.
+
 # Notes
 
 This project was built as a practical Azure serverless demo and portfolio example.
