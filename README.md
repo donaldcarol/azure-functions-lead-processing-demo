@@ -4,6 +4,11 @@
 
 A small serverless Azure Functions project built with the Node.js v4 programming model.
 
+Serverless Azure Functions demo
+
+HTTP → Queue → Worker pattern
+
+
 ## Overview
 
 This project demonstrates a simple business-style workflow using three Azure Functions:
@@ -111,9 +116,11 @@ Install dependencies:
 
 npm install
 
-Run locally:
-
 func start
+
+# Deploy
+
+func azure functionapp publish <functionapp-name>
 
 # Notes
 
