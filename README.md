@@ -1,6 +1,8 @@
+![Azure](https://img.shields.io/badge/Azure-Functions-blue)
+![Node](https://img.shields.io/badge/Node.js-18-green)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
-# Azure Functions Lead Processing Demo
+# Azure Functions Lead Processing 
 
 A small serverless Azure Functions project built with the Node.js v4 programming model.
 
